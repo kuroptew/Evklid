@@ -16,13 +16,13 @@
   <header class="header">
     <div class="container container-header">
       <a href="" class="logo">
-        <img src="./img/Logo.svg" alt="Евклид Проектные системы" class="logo-img">
+        <img src="./img/Logo.svg" alt="Евклид Проектные системы" class="header__logo-img">
       </a>
       <div class="header-right">
         <nav class="header-nav">
           <ul class="header-nav__list">
             <li class="header-nav__list__item">
-              <a href="" class="header-nav__link">О нас</a>
+              <a href="#about" class="header-nav__link">О нас</a>
             </li>
             <li class="header-nav__list__item">
               <a href="" class="header-nav__link">Проекты</a>
@@ -39,7 +39,7 @@
           </ul>
         </nav>
         <button class="button search-button">
-          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" class="search-icon">
             <rect width="7.56126" height="1.89031"
               transform="matrix(0.713342 0.700816 -0.713342 0.700816 18.6062 17.3762)" fill="#333333" />
             <path
@@ -61,11 +61,11 @@
         <p class="section-hero__text">
           Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов
         </p>
-        <button class="section-hero_button">
+        <button class="section-hero__button">
           Заказать расчёт
         </button>
       </div>
-      <div class="section-hero_bullit">
+      <div class="section-hero__bullit">
         <svg width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg" class="eclipse">
           <circle cx="7.5" cy="7.5" r="7.5" fill="white" />
         </svg>
@@ -77,7 +77,7 @@
         </svg>
       </div>
     </section>
-    <section class="section sesection-headingction-about">
+    <section class="section seсtion-about" id="about">
       <h2 class="section-heading section-about__heading">
         О нас
       </h2>
@@ -137,16 +137,24 @@
       </h2>
       <ul class="how__list-steps">
         <li class="list-steps__item">
-          1 шаг
+          <button class="step__button">
+            1 шаг
+          </button>
         </li>
         <li class="list-steps__item">
-          2 шаг
+          <button class="step__button">
+            2 шаг
+          </button>
         </li>
         <li class="list-steps__item">
-          3 шаг
+          <button class="step__button">
+            3 шаг
+          </button>
         </li>
         <li class="list-steps__item">
-          4 шаг
+          <button class="step__button">
+            4 шаг
+          </button>
         </li>
       </ul>
       <div class="step__content">
@@ -229,29 +237,29 @@
     <div class="container container-footer">
       <div class="footer__content_left">
         <a href="" class="logo">
-          <img src="./img/Logo-white.svg" alt="Евклид Проектные системы" class="logo-img">
+          <img src="./img/Logo-white.svg" alt="Евклид Проектные системы" class="footer__logo-img">
         </a>
         <nav class="footer-nav">
           <ul class="footer-nav__list">
-            <li class="footer-nav__list__item">
+            <li class="footer-nav__item">
               <a href="" class="footer-nav__link">О нас</a>
             </li>
-            <li class="footer-nav__list__item">
+            <li class="footer-nav__item">
               <a href="" class="footer-nav__link">Проекты</a>
             </li>
-            <li class="footer-nav__list__item">
+            <li class="footer-nav__item">
               <a href="" class="footer-nav__link">Отзывы</a>
             </li>
-            <li class="footer-nav__list__item">
+            <li class="footer-nav__item">
               <a href="" class="footer-nav__link">Договор оферты</a>
             </li>
-            <li class="footer-nav__list__item">
+            <li class="footer-nav__item">
               <a href="" class="footer-nav__link">Договор подряда</a>
             </li>
-            <li class="footer-nav__list__item">
+            <li class="footer-nav__item">
               <a href="" class="footer-nav__link">Конфиденциальность</a>
             </li>
-            <li class="footer-nav__list__item">
+            <li class="footer-nav__item">
               <a href="" class="footer-nav__link">Партнёрское соглашение</a>
             </li>
           </ul>
@@ -269,24 +277,26 @@
         </ul>
       </div>
       <div class="footer__content_center">
-        <form action="" class="footer__form">
+        <form action="https://jsonplaceholder.typicode.com/posts" class="footer__form" method="post">
           <fieldset class="form_fieldset">
             <legend class="form__heading">Оставить заявку</legend>
-            <input type="text" name="name" placeholder="Фамилия, имя и отчество*" class="form__name normal-text">
-            <input type="text" name="email" placeholder="E-mail*" class="form__email normal-text">
+            <input required type="text" name="name" placeholder="Фамилия, имя и отчество*" class="form__name normal-text">
+            <input required type="text" name="email" placeholder="E-mail*" class="form__email normal-text">
             <textarea name="text" placeholder="Сообщение" class="form__textarea normal-text"></textarea>
-            <button class="form_button">Отправить данные</button>
-            <input required type="checkbox" id="checkbox-id" name="agreement" class="agreement" autocomplete="off">
+            <div class="form_bottom">
+              <button class="form_button">Отправить данные</button>
+            <input required type="checkbox" id="checkbox-id" name="agreement" class="agreement" checked>
             <label for="checkbox-id" class="checkbox-text normal-text"><span class="checkbox"></span>Согласен на
               обработку данных</label>
+            </div>
           </fieldset>
         </form>
       </div>
       <p class="footer__content_right footer-text normal-text">
-          Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта:
-          разбавленное изрядной долей эмпатии, рациональное мышление позволяет оценить значение модели развития. Таким
-          образом, консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании
-          стандартных подходов.
+        Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта:
+        разбавленное изрядной долей эмпатии, рациональное мышление позволяет оценить значение модели развития. Таким
+        образом, консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании
+        стандартных подходов.
       </p>
     </div>
   </footer>
