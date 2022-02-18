@@ -280,14 +280,15 @@
         <form action="https://jsonplaceholder.typicode.com/posts" class="footer__form" method="post">
           <fieldset class="form_fieldset">
             <legend class="form__heading">Оставить заявку</legend>
-            <input required type="text" name="name" placeholder="Фамилия, имя и отчество*" class="form__name normal-text">
-            <input required type="text" name="email" placeholder="E-mail*" class="form__email normal-text">
+            <input required type="text" name="name" placeholder="Фамилия, имя и отчество*"
+              class="form__name normal-text">
+            <input required type="email" name="email" placeholder="E-mail*" class="form__email normal-text">
             <textarea name="text" placeholder="Сообщение" class="form__textarea normal-text"></textarea>
             <div class="form_bottom">
               <button class="form_button">Отправить данные</button>
-            <input required type="checkbox" id="checkbox-id" name="agreement" class="agreement" checked>
-            <label for="checkbox-id" class="checkbox-text normal-text"><span class="checkbox"></span>Согласен на
-              обработку данных</label>
+              <input required type="checkbox" id="checkbox-id" name="agreement" class="agreement" checked>
+              <label for="checkbox-id" class="checkbox-text normal-text"><span class="checkbox"></span>Согласен на
+                обработку данных</label>
             </div>
           </fieldset>
         </form>
