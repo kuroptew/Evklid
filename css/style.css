@@ -311,10 +311,10 @@ html {
   background: rgba(255, 255, 255, 0.4);
 }
 
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  margin:0 10px;
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 10px;
 }
-
 
 .section-hero__content {
   position: absolute;
@@ -361,13 +361,14 @@ html {
   position: relative;
   display: inline-block;
   width: calc(100% / 2 - 18px);
+  min-height: 622px;
   margin-right: 32px;
 }
 
 .left-img {
   position: relative;
   width: 100%;
-  min-height: 622px;
+  height: 100%;
   background-image: url("../img/about/man.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -406,13 +407,12 @@ html {
   border: 3px solid #ff9900;
   background: transparent;
   color: #fff;
-  transition: backgound-color 0.3s ease, outline 0.4s ease, border 0.4s ease;
+  transition: backgound-color 0.4s ease, outline 0.4s ease, border-color 0.4s ease;
 }
 
 .about__button-more:hover,
 .about__button-more:focus {
-  border: none;
-  background-color: rgba(255, 153, 0, 0.7);
+  background-color: #ff9900;
 }
 
 .about__button-more:focus {
@@ -420,7 +420,7 @@ html {
 }
 
 .about__button-more:active {
-  border: none;
+  border-color: #e1670e;
   background-color: #e1670e;
 }
 
@@ -514,7 +514,7 @@ html {
 }
 
 .step-content-active {
-  display:block;
+  display: block;
 }
 
 .step__content {
@@ -1241,8 +1241,8 @@ input[type="checkbox"]:checked + label span {
   .card-image {
     margin-right: 0;
     margin-bottom: 12px;
-    width: 56px;
-    height: 49px;
+    width: 58px;
+    height: 50px;
   }
 
   .info-heading {
@@ -1292,7 +1292,6 @@ input[type="checkbox"]:checked + label span {
     width: 30px;
     height: 30px;
   }
-
 
   .cross {
     width: 18.6px;
