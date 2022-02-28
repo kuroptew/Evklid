@@ -77,7 +77,7 @@ html {
   font-weight: 700;
   background-color: #ff9900;
   color: #fff;
-  transition: backgound-color 0.3s ease, outline 0.4s ease;
+  transition: background-color 0.4s ease, outline 0.4s ease;
 }
 
 .app-button:hover,
