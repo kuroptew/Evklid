@@ -129,6 +129,68 @@ html {
   background-size: contain;
 }
 
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 68px 0 0 0;
+  height: 100%;
+  display: none;
+  z-index: 100;
+  background: #fff;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  vertical-align: middle;
+}
+
+.is-active {
+  transform: none;
+}
+
+.menu__list {
+  text-align: center;
+}
+
+.menu__list__item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.menu__link {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  color: #333;
+  transition: border-color 0.4s ease, outline 0.4s ease, color 0.4s ease;
+}
+
+.menu__link:hover {
+  border-color: #ff9900;
+}
+
+.menu__link:focus {
+  outline: 2px solid #ff9900;
+}
+
+.menu__link:active {
+  outline: none;
+  color: #e1670e;
+  border-bottom: 2px solid #e1670e;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  left: auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ececec;
+}
+
 .header__logo-img {
   width: 224px;
   height: 72px;
@@ -207,15 +269,62 @@ html {
 /* Hero */
 .section-hero {
   position: relative;
+}
+
+.hero-img {
   min-height: 620px;
-  background: url("../img/hero/slide1.jpg") no-repeat;
+}
+
+.hero-img-1 {
+  background: url("../img/hero/slide1.jpg");
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
+.hero-img-2 {
+  background: url("../img/hero/slide2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-img-3 {
+  background: url("../img/hero/slide3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.section-hero .swiper-pagination {
+  bottom: 30px;
+}
+/* Буллеты */
+.section-hero .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  background-color: #fff;
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin:0 10px;
+}
+
+
 .section-hero__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   padding: 100px 80px;
   color: white;
+  z-index: 10;
 }
 
 .section-hero__heading {
@@ -400,6 +509,14 @@ html {
   color: #e1670e;
 }
 
+.step-content {
+  display: none;
+}
+
+.step-content-active {
+  display:block;
+}
+
 .step__content {
   display: flex;
   justify-content: space-between;
@@ -419,6 +536,7 @@ html {
 
 .how__buttons {
   display: flex;
+  margin-top: 32px;
   align-items: center;
 }
 
@@ -455,7 +573,31 @@ html {
   display: block;
   width: 49%;
   min-height: 460px;
+}
+
+.step-img-1 {
   background-image: url("../img/how/1step.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.step-img-2 {
+  background-image: url("../img/how/2step.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.step-img-3 {
+  background-image: url("../img/how/3step.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.step-img-4 {
+  background-image: url("../img/how/3step.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -467,8 +609,6 @@ html {
 }
 
 .questions__item {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 30px 0px;
   border-bottom: 1px solid #cacaca;
@@ -484,6 +624,36 @@ html {
   transition: color 0.4s ease;
 }
 
+.ui-accordion .ui-accordion-header {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: transparent;
+  font-family: "Montserrat";
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.ui-accordion .ui-accordion-content {
+  padding: 20px 0 0 0;
+  border-top: 0;
+  font-size: 16px;
+  font-family: "Montserrat";
+  line-height: 32px;
+  font-weight: 400;
+  color: #333;
+  border: none;
+}
+
+.ui-icon {
+  display: none;
+}
+
 .questions__item:hover,
 .questions__item:focus {
   border-bottom: 1px solid #ff9900;
@@ -491,6 +661,10 @@ html {
 
 .questions__item:active {
   border-bottom: 1px solid #cacaca;
+}
+
+.questions__text {
+  padding: 30px 0 0 0;
 }
 
 .questions_item__button {
@@ -769,6 +943,10 @@ input[type="checkbox"]:checked + label span {
     display: block;
   }
 
+  .menu {
+    display: block;
+  }
+
   .header__logo-img {
     width: 150px;
     height: 48px;
@@ -776,6 +954,10 @@ input[type="checkbox"]:checked + label span {
 
   .header-nav {
     display: none;
+  }
+
+  .hero-img {
+    min-height: 668px;
   }
 
   .section-hero__content {
@@ -848,6 +1030,10 @@ input[type="checkbox"]:checked + label span {
 @media (max-width: 1023.98px) {
   .container-header {
     height: 69px;
+  }
+
+  .hero-img {
+    min-height: 662px;
   }
 
   .section-hero__content {
@@ -969,8 +1155,18 @@ input[type="checkbox"]:checked + label span {
     height: 35px;
   }
 
-  .section-hero {
+  .hero-img {
     min-height: 308px;
+  }
+
+  .section-hero .swiper-pagination {
+    bottom: 15px;
+  }
+
+  .section-hero .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
   }
 
   .section-hero__content {
@@ -1073,6 +1269,10 @@ input[type="checkbox"]:checked + label span {
     align-items: flex-start;
   }
 
+  .step_heading {
+    line-height: 32px;
+  }
+
   .app-button_small {
     padding: 14px;
     margin-right: 10px;
@@ -1087,21 +1287,27 @@ input[type="checkbox"]:checked + label span {
     min-height: 160px;
   }
 
-  .questions__item__heading {
-    margin-right: 17px;
-    margin-bottom: 0;
-    font-size: 14px;
-    line-height: 24px;
-  }
-
   .questions_item__button {
+    margin-left: 17px;
     width: 30px;
     height: 30px;
   }
 
+
   .cross {
     width: 18.6px;
     height: 18.6px;
+  }
+
+  .ui-accordion .ui-accordion-header {
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+
+  .ui-accordion .ui-accordion-content {
+    font-size: 14px;
+    line-height: 28px;
   }
 
   .container-footer {
