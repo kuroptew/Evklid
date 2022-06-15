@@ -17,3 +17,13 @@ new Swiper ('.section-hero', {
     delay: 8000,
   }
 });
+
+//Аккордион
+$(function () {
+  $("#accordion").accordion({
+    collapsible:true,
+    active: false,
+    heightStyle: "content",
+  });
+
+});

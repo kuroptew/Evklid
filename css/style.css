@@ -246,10 +246,6 @@ html {
   transition: outline 0.4s ease;
 }
 
-.search-button:focus {
-  outline: 2px solid #ff9900;
-}
-
 .search-button .search-icon rect {
   transition: fill 0.4s ease;
 }
@@ -496,12 +492,8 @@ html {
   transition: color 0.4s ease, outline 0.4s ease, border 0.4s;
 }
 
-.step__button:hover {
+.step__button:hover, :focus {
   color: #ff9900;
-}
-
-.step__button:focus {
-  outline: 2px solid #ff9900;
 }
 
 .step__button:active {
@@ -608,112 +600,91 @@ html {
   margin-bottom: 32px;
 }
 
-.questions__item {
-  align-items: center;
-  padding: 30px 0px;
+.accordion {
   border-bottom: 1px solid #cacaca;
-  transition: border-bottom 0.4s ease;
 }
 
-.questions__item:first-child {
-  border-top: 1px solid #cacaca;
-}
-
-.questions__item__heading {
-  margin-bottom: 0;
-  transition: color 0.4s ease;
-}
-
-.ui-accordion .ui-accordion-header {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
+.questions-wrapper {
   position: relative;
-  border: none;
-  background: transparent;
-  font-family: "Montserrat";
-  font-size: 24px;
-  line-height: 32px;
-}
-
-.ui-accordion .ui-accordion-content {
-  padding: 20px 0 0 0;
-  border-top: 0;
-  font-size: 16px;
-  font-family: "Montserrat";
-  line-height: 32px;
-  font-weight: 400;
-  color: #333;
-  border: none;
-}
-
-.ui-icon {
-  display: none;
-}
-
-.questions__item:hover,
-.questions__item:focus {
-  border-bottom: 1px solid #ff9900;
-}
-
-.questions__item:active {
+  margin-bottom: -1px;
+  padding: 40px 0;
+  cursor: pointer;
+  border-top: 1px solid #cacaca;
   border-bottom: 1px solid #cacaca;
+  transition: 0.4s ease;
+  outline: none;
 }
 
-.questions__text {
-  padding: 30px 0 0 0;
+.ui-state-hover{
+  transition: 0.4s ease;
+  border-color: #ff9900;
+  z-index: 10;
 }
 
-.questions_item__button {
-  display: flex;
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  background-color: #ececec;
-  transform: background-color 0.4s ease;
-}
-
-.cross {
-  width: 31px;
-  height: 31px;
-}
-
-.questions__item:hover .questions__item__heading,
-.questions__item:focus .questions__item__heading {
+.questions-wrapper:hover .questions__title{
   color: #ff9900;
 }
 
-.questions__item:active .questions__item__heading {
+.questions-wrapper:hover .accordion-icon {
+  background-color: #ff9900;
+  background-image: url(/img/questions/white-cross.svg);
+}
+
+.ui-state-focus{
+  transition: 0.4s ease;
+  border-color: #ff9900;
+  z-index: 10;
+}
+
+.questions-wrapper:focus .questions__title{
+  color: #ff9900;
+}
+
+.questions-wrapper:focus .accordion-icon {
+  background-color: #ff9900;
+  background-image: url(/img/questions/white-cross.svg);
+}
+
+.ui-state-active{
+  border-bottom: none;
+}
+
+
+
+.questions__title {
+  position: relative;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color:#333;
+  transition: 0.4s ease;
+  outline: none;
+}
+
+.accordion-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-image: url(/img/questions/cross.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ececec;
+  transition: 0.4s ease;
+}
+
+.questions__description{
+  padding-bottom: 40px;
+  font-style: 16px;
+  line-height: 200%;
   color: #333;
 }
 
-.questions__item:hover .questions_item__button,
-.questions__item:focus .questions_item__button {
-  background-color: #ff9900;
-}
-
-.questions__item:active .questions_item__button {
-  background-color: #ececec;
-}
-
-.questions__item .questions_item__button .cross path {
-  transition: transform 0.4s ease, fill 0.4s ease;
-}
-
-.questions__item:hover .questions_item__button .cross path,
-.questions__item:focus .questions_item__button .cross path {
-  transform-origin: center;
-  fill: #666;
-}
-
-.questions__item:active .questions_item__button .cross path {
-  transform-origin: center;
+.ui-state-active .accordion-icon{
   transform: rotate(45deg);
 }
 
